@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cd ~/
+cd /home/ubuntu
+touch starting.setup.done
 
 sudo apt update -y && sudo apt upgrade -y
 touch update.setup.done
