@@ -24,6 +24,6 @@ os.system("aws s3 cp {}/ground_truth_manifest.json s3://{}/ground_truth/".format
 
 os.system("python3 03_visualize_gt_labeling_manifest.py -b {} -k {} -i {}{}".format( args["output_bucket"], "ground_truth/ground_truth_manifest.json", args["work_dir"], filen ))
 
-os.system("aws s3 cp {}/ground_truth_manifest_preview.png s3://{}/ground_truth/".format( args["work_dir"], args["output_bucket"] ))
+os.system("aws s3 cp {}/ground_truth_manifest_preview.png s3://{}".format( args["work_dir"], args["output_bucket"] ))
 
 #os.system("aws ec2 terminate-instances --instance-ids 'curl http://169.254.169.254/latest/meta-data/instance-id'")
