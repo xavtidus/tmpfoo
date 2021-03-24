@@ -17,3 +17,5 @@ cd tmpfoo
 pip3 install -r requirements.txt 
 
 pip3 install opencv-contrib-python
+
+pip3 install awscli --upgrade
