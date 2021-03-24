@@ -15,3 +15,5 @@ git clone https://github.com/xavtidus/tmpfoo.git
 cd tmpfoo
 
 pip3 install -r requirements.txt 
+
+pip3 install opencv-contrib-python
