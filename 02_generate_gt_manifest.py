@@ -30,7 +30,7 @@ def generate_ground_truth_manifest(s3bucket, s3_prefix, sampling_rate, working_d
     count_frames_total = 0
     count_frames_included = 0
 
-    manifest_filename = 'ground_truth_manifest.json')
+    manifest_filename = 'ground_truth_manifest.json'
     manifest_filepath = os.path.join(working_directory, manifest_filename)
     logger.info("writing to manifest: {}".format(manifest_filepath))
     start = time.time()
