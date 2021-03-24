@@ -2,16 +2,16 @@ import os
 import string
 import time
 import json
+import argparse
 
+ap = argparse.ArgumentParser()
+ap.add_argument("-w", "--work-dir", required=True, help="the working directory")
+ap.add_argument("-o", "--output-bucket", required=True, help="the output s3 bucket")
+ap.add_argument("-b", "--source-bucket", required=True, help="the source s3 bucket")
+ap.add_argument("-k", "--source-key", required=True, help="the source mp4 key")
 
-WORKING_DIR='tmp/'
-os.system("mkdir {}".format(WORKING_DIR))
+os.system("mkdir {}".format(args["work_dir"]))
 
-OUTPUT_S3_BUCKET = 'lego-train-training'
+os.system("python3 01_video_to_frame_utils.py --video_s3_bucket {} --video_s3_key {} --working_directory '{}' --visualize_video True --visualize_sample_rate 1 -o '{}'".format( args["source_bucket"], args["source_key"], args["work_dir"], args["output_bucket"] ))
 
-VIDEO_S3_BUCKET = 'lego-train-training'  
-VIDEO_S3_KEY = 'videos/rail-racer-train.mp4'
-
-os.system("python3 01_video_to_frame_utils.py --video_s3_bucket {} --video_s3_key {} --working_directory '{}' --visualize_video True --visualize_sample_rate 1 -o '{}'".format( VIDEO_S3_BUCKET, VIDEO_S3_KEY, WORKING_DIR, OUTPUT_S3_BUCKET ))
-
-os.system("aws ec2 terminate-instances --instance-ids 'curl http://169.254.169.254/latest/meta-data/instance-id'")
+#os.system("aws ec2 terminate-instances --instance-ids 'curl http://169.254.169.254/latest/meta-data/instance-id'")
