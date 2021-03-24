@@ -11,7 +11,7 @@ touch pypip3.setup.done
 sudo apt install git -y
 touch git.setup.done
 
-sudo apt  install awscli -y
+sudo apt install awscli -y
 touch awscli.setup.done
 
 git clone https://github.com/xavtidus/tmpfoo.git
