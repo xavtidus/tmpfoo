@@ -14,3 +14,4 @@ VIDEO_S3_KEY = 'videos/rail-racer-train.mp4'
 
 os.system("python3 01_video_to_frame_utils.py --video_s3_bucket {} --video_s3_key {} --working_directory '{}' --visualize_video True --visualize_sample_rate 1 -o '{}'".format( VIDEO_S3_BUCKET, VIDEO_S3_KEY, WORKING_DIR, OUTPUT_S3_BUCKET ))
 
+os.system("aws ec2 terminate-instances --instance-ids 'curl http://169.254.169.254/latest/meta-data/instance-id'")
